@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CardDetailsApplication {
 
-	@Autowired
+	@Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder app) { 
+    return app.sources(SpringBootWarExampleApplication.class);
 	private CardDetails cardDetails;
 	public static void main(String[] args) {
 		SpringApplication.run(CardDetailsApplication.class, args);
